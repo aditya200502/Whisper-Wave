@@ -6,7 +6,7 @@ import { Button, Container, Paper, TextField, Typography } from "@mui/material"
 function Login() {
 
     const [isLogin, setIsLogin] = useState("true");
-    const ToggleLogin = () => setIsLogin(prev != prev);
+    const ToggleLogin = () => setIsLogin( (prev) => !prev);
     return (
         <Container component={"main"} maxWidth="xs" sx={{
             height: '100vh',
@@ -47,6 +47,9 @@ function Login() {
                                 width: "100%",
                                 marginTop: "1rem"
                             }}>
+
+                                
+
                                 <TextField required fullWidth label="Name" margin='normal' variant='outlined' />
                                 <TextField required fullWidth label="Bio" margin='normal' variant='outlined' />
                                 <TextField required fullWidth label="UserName" margin='normal' variant='outlined' />
