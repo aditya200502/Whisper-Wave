@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Button, Container, Paper, TextField, Typography } from "@mui/material"
-
+import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from "@mui/material"
+import {CameraAlt as CameraAltIcon} from '@mui/icons-material'
+import { VisuallyHiddenInput } from '../components/styles/StyledComponent';
 
 
 function Login() {
 
     const [isLogin, setIsLogin] = useState("true");
-    const ToggleLogin = () => setIsLogin( (prev) => !prev);
+    const ToggleLogin = () => setIsLogin((prev) => !prev);
     return (
         <Container component={"main"} maxWidth="xs" sx={{
             height: '100vh',
@@ -32,7 +33,7 @@ function Login() {
                             marginTop: "1rem"
                         }}>
                             <TextField required fullWidth label="UserName" margin='normal' variant='outlined' />
-                            <TextField required fullWidth label="PassWord" type='password' margin='normal' variant='outlined' />
+                            <TextField required fullWidth label="Password" type='password' margin='normal' variant='outlined' />
                             <Button sx={{ marginTop: "1rem" }} fullWidth variant='contained' color='primary' type='submit'>Login</Button>
                             <Typography textAlign={'center'} m={'1rem'}>OR</Typography>
 
@@ -48,7 +49,24 @@ function Login() {
                                 marginTop: "1rem"
                             }}>
 
-                                
+                                <Stack position={"relative"} width={"10rem"} margin={"auto"}>
+                                    <Avatar sx={{
+                                        width: "10rem",
+                                        height: "10rem",
+                                        objectFit: "contain"
+                                    }} />
+
+                                    <IconButton sx={{
+                                        position:"absolute",
+                                        bottom:"0",
+                                        right:"0"
+                                    }}>
+                                        <>
+                                            <CameraAltIcon />
+                                            <VisuallyHiddenInput type='file'/>
+                                        </>
+                                    </IconButton>
+                                </Stack>
 
                                 <TextField required fullWidth label="Name" margin='normal' variant='outlined' />
                                 <TextField required fullWidth label="Bio" margin='normal' variant='outlined' />
