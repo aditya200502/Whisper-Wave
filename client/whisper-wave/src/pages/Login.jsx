@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from "@mui/material"
-import {CameraAlt as CameraAltIcon} from '@mui/icons-material'
+import { CameraAlt as CameraAltIcon } from '@mui/icons-material'
 import { VisuallyHiddenInput } from '../components/styles/StyledComponent';
 
 
@@ -57,13 +57,21 @@ function Login() {
                                     }} />
 
                                     <IconButton sx={{
-                                        position:"absolute",
-                                        bottom:"0",
-                                        right:"0"
-                                    }}>
+                                        position: "absolute",
+                                        bottom: "0",
+                                        right: "0",
+                                        color: "white",
+                                        bgcolor: "rgba(0,0,0,0.5)",
+                                        ":hover": {
+                                            bgcolor: "rgba(0,0,0,0.7)"
+                                        }
+
+                                    }}
+                                        component="label"
+                                    >
                                         <>
                                             <CameraAltIcon />
-                                            <VisuallyHiddenInput type='file'/>
+                                            <VisuallyHiddenInput type='file' />
                                         </>
                                     </IconButton>
                                 </Stack>
