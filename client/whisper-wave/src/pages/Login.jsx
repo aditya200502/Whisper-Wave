@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from "@mui/material"
 import { CameraAlt as CameraAltIcon } from '@mui/icons-material'
 import { VisuallyHiddenInput } from '../components/styles/StyledComponent';
-
+import {useInputValidation} from '6pp'
 
 function Login() {
 
     const [isLogin, setIsLogin] = useState("true");
+
     const ToggleLogin = () => setIsLogin((prev) => !prev);
+
+    const name = useInputValidation("");
+    const bio = useInputValidation("");
+    const username = useInputValidation("");
+    const password = useInputValidation("");
     return (
         <Container component={"main"} maxWidth="xs" sx={{
             height: '100vh',
@@ -32,8 +38,8 @@ function Login() {
                             width: "100%",
                             marginTop: "1rem"
                         }}>
-                            <TextField required fullWidth label="UserName" margin='normal' variant='outlined' />
-                            <TextField required fullWidth label="Password" type='password' margin='normal' variant='outlined' />
+                            <TextField required fullWidth label="UserName" margin='normal' variant='outlined' value={username.value} onChange={username.changeHandler}/>
+                            <TextField required fullWidth label="Password" type='password' margin='normal' variant='outlined' value={password.value} onChange={password.changeHandler}/>
                             <Button sx={{ marginTop: "1rem" }} fullWidth variant='contained' color='primary' type='submit'>Login</Button>
                             <Typography textAlign={'center'} m={'1rem'}>OR</Typography>
 
@@ -76,10 +82,10 @@ function Login() {
                                     </IconButton>
                                 </Stack>
 
-                                <TextField required fullWidth label="Name" margin='normal' variant='outlined' />
-                                <TextField required fullWidth label="Bio" margin='normal' variant='outlined' />
-                                <TextField required fullWidth label="UserName" margin='normal' variant='outlined' />
-                                <TextField required fullWidth label="PassWord" type='password' margin='normal' variant='outlined' />
+                                <TextField required fullWidth label="Name" margin='normal' variant='outlined' value={name.value} onChange={name.changeHandler}/>
+                                <TextField required fullWidth label="Bio" margin='normal' variant='outlined' value={bio.value} onChange={bio.changeHandler}/>
+                                <TextField required fullWidth label="UserName" margin='normal' variant='outlined' value={username.value} onChange={username.changeHandler}/>
+                                <TextField required fullWidth label="PassWord" type='password' margin='normal' variant='outlined' value={password.value} onChange={password.changeHandler}/>
                                 <Button sx={{ marginTop: "1rem" }} fullWidth variant='contained' color='primary' type='submit'>Sign Up</Button>
                                 <Typography textAlign={'center'} m={'1rem'}>OR</Typography>
 
