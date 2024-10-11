@@ -3,6 +3,7 @@ import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typogra
 import { CameraAlt as CameraAltIcon } from '@mui/icons-material'
 import { VisuallyHiddenInput } from '../components/styles/StyledComponent';
 import {useInputValidation} from '6pp'
+import { UserNameValidator } from '../utils/validator';
 
 function Login() {
 
@@ -12,7 +13,7 @@ function Login() {
 
     const name = useInputValidation("");
     const bio = useInputValidation("");
-    const username = useInputValidation("");
+    const username = useInputValidation("",UserNameValidator);
     const password = useInputValidation("");
     return (
         <Container component={"main"} maxWidth="xs" sx={{
