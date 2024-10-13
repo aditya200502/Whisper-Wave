@@ -25,6 +25,15 @@ function Login() {
         e.preventDefault();
     }
     return (
+        <div
+            style={{
+                backgroundImage:"linear-gradient(rgba(200,200,200,0.5),rgba(120,110,220,0.5))",
+                backgroundSize: "cover",
+                height: "100vh",
+                width: "100vw",
+
+            }}>
+
         <Container component={"main"} maxWidth="xs" sx={{
             height: '100vh',
             display: 'flex',
@@ -131,6 +140,8 @@ function Login() {
 
             </Paper>
         </Container>
+
+        </div>
     )
 }
 
