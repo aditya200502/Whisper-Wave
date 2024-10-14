@@ -14,12 +14,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ProtectRoute user={user}>
-          <Home />
-        </ProtectRoute>} />
-        <Route path='/chats/:chatId' element={<Chats />} />
-        <Route path='/groups' element={<Groups />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<ProtectRoute user={user} />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/chats/:chatId' element={<Chats />} />
+          <Route path='/groups' element={<Groups />} />
+        </Route>
+
+        <Route path='/login' element={
+          <ProtectRoute user={!user} redirect='/'>
+            <Login />
+          </ProtectRoute>} />
       </Routes>
     </BrowserRouter>
   )
