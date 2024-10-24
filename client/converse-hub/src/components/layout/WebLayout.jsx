@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from './Header'
 
 const WebLayout = () => WrappedComponent => {
 
@@ -8,7 +9,7 @@ const WebLayout = () => WrappedComponent => {
         return (
             <div>
 
-                <div>Header</div>
+                <Header/>
                 <WrappedComponent {...props} />
                 <div>Footer</div>
             </div>
