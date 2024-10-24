@@ -1,4 +1,5 @@
 import React from 'react'
+import WebLayout from '../components/layout/WebLayout'
 
 function Chat() {
   return (
@@ -6,4 +7,4 @@ function Chat() {
   )
 }
 
-export default Chat
+export default WebLayout()(Chat)
